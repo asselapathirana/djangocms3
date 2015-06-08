@@ -207,3 +207,9 @@ MIGRATION_MODULES = {
     'djangocms_teaser': 'djangocms_teaser.migrations_django',
     'djangocms_video': 'djangocms_video.migrations_django'
 }
+SECRET_KEY=os.getenv('SECRET_KEY','')
+
+DATABASES = {
+    'default':
+        {'HOST': 'localhost', 'USER': os.getenv('DATABASE_USER',''), 'PASSWORD': os.getenv('DATABASE_PASSWORD',''), 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'PORT': '', 'NAME': os.getenv('DATABASE_NAME','')}
+}
