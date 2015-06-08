@@ -94,12 +94,16 @@
 
 -  This will REPLACE the remote database
  
- \# As postgres locally run the following
+ \# activate the lcoal virtualenv and make sure the postactivate script is sourced. 
  
- pg_dump localdbname > /tmp/sql.sql
-
- \# As postgres on remote server run 
+ ./manage.py dumpdata > /tmp/out.json
  
- \# then copy the /tmp/sql.sql to remote /tmp/sql.sql
+ \# copy /tmp/out.json to the remote server. Then on the remote
 
- psql remotedbname < /tmp/sql.sql  
+ \# sudo to the user (owner) of the app. 
+ \# make sure virtualenv is loaded and postactivate scrip is sourced. 
+ 
+ ./manage.py loaddata /tmp/out.json
+
+ \# reload the page on the browser. 
+ 
