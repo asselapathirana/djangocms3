@@ -113,4 +113,10 @@
 
  ./manage.py createsuperuser
 
- 
+## Video playing issues. 
+
+ \# try replacing player.swf with new version (http://github.com/FlashJunior/OSFlashVideoPlayer/raw/master/player.swf)  at <app>/static/cms/swf/player.swf 
+
+This need to be automated in deploy. 
+
+
