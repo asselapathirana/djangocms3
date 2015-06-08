@@ -1,1 +1,71 @@
 # djangocms3
+
+## Installing django-cms
+- There are common problems with Pillow with jpeg support. 
+ 
+ sudo apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
+ mkvirtualenv myven
+ 
+ cp postactivate $VIRUAL_ENV/bin/postactivate
+ 
+ cp predeactivate $VIRUAL_ENV/bin/predeactivate
+
+ \# then edit the desination files to provide suitable values for the variables. (notice the datbase url and provide values to match that in the DATABASE related entries!
+ 
+ \# reload the virutal environment
+ 
+ workon virtual_env_name
+ 
+ \# then within the virtual enviroment
+ easy_install Pillow
+ 
+ \# note down the version say x.y.z. Also make sure that the jpeg support is compiled
+ 
+ \#--- JPEG support available message should appear at the end of building. 
+ 
+ \# now dump thre requirements of djangocms as so:
+ djangocms -p . mysite -R 
+ 
+ \# past requirements to ../rquirements.txt
+ 
+ \#now edit the requirements.txt and make sure that
+ 
+ Pillow==x.y.z
+ 
+ \# now create the local postgres database to match 
+ 
+ sudo su postgres
+ 
+ ...
+ 
+ \# then run after noting the correct database url postgres://..
+ 
+ djangocms -p . mysite -r ../requirements.txt 
+ 
+ \# now clone the distribution directory 
+ 
+  git clone  git@github.com:asselapathirana/django_deploy_with_ansible.git deploy
+ 
+ \# now edit mysite/settings.py and append ./deploy/_settings.py to it
+ 
+ \# now test the local server. 
+ ./manage.py runserver
+ 
+ \# add a dummy file to the <appname>/static directory so that the directory will be recorded in git. 
+ 
+ \# Create a github repo  <myrepo> 
+ 
+ git clone <repo's ssh url>
+ 
+ \# edit .gitignore and add a line
+ 
+ deploy/
+ 
+ \# then
+ 
+ git status
+ git add . 
+ git commit -am "message"
+ git push origin master
+ 
+ 
