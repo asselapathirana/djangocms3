@@ -207,7 +207,7 @@ MIGRATION_MODULES = {
     'djangocms_teaser': 'djangocms_teaser.migrations_django',
     'djangocms_video': 'djangocms_video.migrations_django'
 }
-SECRET_KEY=os.getenv('SECRET_KEY','')
+SECRET_KEY=os.getenv('DJANGO_SECRET_KEY','')
 
 DATABASES = {
     'default':
