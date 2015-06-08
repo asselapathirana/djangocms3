@@ -138,7 +138,15 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'djms'
+    'djms',
+    'filer',
+    'easy_thumbnails',
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_link',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
 )
 
 LANGUAGES = (
@@ -205,7 +213,13 @@ MIGRATION_MODULES = {
     'djangocms_file': 'djangocms_file.migrations_django',
     'djangocms_picture': 'djangocms_picture.migrations_django',
     'djangocms_teaser': 'djangocms_teaser.migrations_django',
-    'djangocms_video': 'djangocms_video.migrations_django'
+    'djangocms_video': 'djangocms_video.migrations_django',
+    'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
+    'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
+    'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
+    'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
 }
 SECRET_KEY=os.getenv('DJANGO_SECRET_KEY','')
 
@@ -214,4 +228,7 @@ DATABASES = {
         {'HOST': 'localhost', 'USER': os.getenv('DATABASE_USER',''), 'PASSWORD': os.getenv('DATABASE_PASSWORD',''), 'ENGINE': 'django.db.backends.postgresql_psycopg2', 'PORT': '', 'NAME': os.getenv('DATABASE_NAME','')}
 }
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+THUMBNAIL_HIGH_RESOLUTION = True
+
+
 
