@@ -41,8 +41,21 @@
  \# then run after noting the correct database url postgres://..
  
  djangocms -p . mysite -r ../requirements.txt 
+
+ \# copy requirements.txt to the project directory
  
+ cp ../requirements.txt . 
+ 
+ \# edit requirements and add the following additional requirements (needed for deployment).  NOTE: All these might not be needed 
  \# now clone the distribution directory 
+
+  gunicorn==19.3.0
+  dj-static==0.0.6
+  django-sslify==0.2.7
+  gunicorn==19.3.0
+  requests==2.7.0
+  static3==0.6.0
+  whitenoise==1.0.6
  
   git clone  git@github.com:asselapathirana/django_deploy_with_ansible.git deploy
  
