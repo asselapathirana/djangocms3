@@ -81,4 +81,25 @@
  git commit -am "message"
  git push origin master
  
+
+## Deploying remotely 
+ - Goto deploy directory and run
+ ./ed ../pass.yml 
+
+ ./setkye
+
+ ./setup
+
+## Copy local (development) database to remote 
+
+-  This will REPLACE the remote database
  
+ \# As postgres locally run the following
+ 
+ pg_dump localdbname > /tmp/sql.sql
+
+ \# As postgres on remote server run 
+ 
+ \# then copy the /tmp/sql.sql to remote /tmp/sql.sql
+
+ psql remotedbname < /tmp/sql.sql  
