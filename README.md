@@ -4,6 +4,7 @@
 - There are common problems with Pillow with jpeg support. 
  
  sudo apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev
+
  mkvirtualenv myven
  
  cp postactivate $VIRUAL_ENV/bin/postactivate
