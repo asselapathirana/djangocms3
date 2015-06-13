@@ -7,9 +7,9 @@
 
  mkvirtualenv myven
  
- cp postactivate $VIRUAL_ENV/bin/postactivate
+ cp postactivate $VIRTUAL_ENV/bin/postactivate
  
- cp predeactivate $VIRUAL_ENV/bin/predeactivate
+ cp predeactivate $VIRTUAL_ENV/bin/predeactivate
 
  \# then edit the desination files to provide suitable values for the variables. (notice the datbase url and provide values to match that in the DATABASE related entries!
  
